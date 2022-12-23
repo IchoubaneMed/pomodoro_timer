@@ -36,6 +36,11 @@ function App() {
     }
   }
 
+  // to enable and disable the start variable
+  const play = () => {
+    start ? setStart(false) : setStart(true);
+  }
+
   return (
     <div>
       <Break />
