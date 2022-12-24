@@ -43,7 +43,7 @@ function App() {
 
   return (
     <div>
-      <Break />
+      <Break changeTime={changeTime} breakTime={breakTime}/>
       <Session />
       <Timer />
     </div>
