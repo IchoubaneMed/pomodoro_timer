@@ -44,7 +44,7 @@ function App() {
   return (
     <div>
       <Break changeTime={changeTime} breakTime={breakTime}/>
-      <Session />
+      <Session changeTime={changeTime} sessionTime={sessionTime}/>
       <Timer />
     </div>
   );
