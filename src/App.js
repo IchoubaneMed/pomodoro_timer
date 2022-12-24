@@ -41,6 +41,18 @@ function App() {
     start ? setStart(false) : setStart(true);
   }
 
+  // to stop the timer from running
+  const reset = () => {
+    setBreakTime(5);
+    setSessionTime(25);
+    setMinutes(25);
+    setSeconds(0);
+    setLabel("Session");
+    setStart(false);
+    setOnSession(true);
+    setOnBreak(false);
+  }
+
   return (
     <div>
       <Break changeTime={changeTime} breakTime={breakTime}/>
