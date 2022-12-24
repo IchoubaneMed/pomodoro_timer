@@ -57,7 +57,7 @@ function App() {
     <div>
       <Break changeTime={changeTime} breakTime={breakTime}/>
       <Session changeTime={changeTime} sessionTime={sessionTime}/>
-      <Timer />
+      <Timer label={label} minutes={minutes} seconds={seconds} play={play} reset={reset}/>
     </div>
   );
 }
