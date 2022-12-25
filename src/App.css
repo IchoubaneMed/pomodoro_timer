@@ -28,3 +28,23 @@
 .icon {
     font-size: 50px;
 }
+
+/* Mobile devices */
+@media screen and (max-width: 480px) {
+    .container {
+        width: 90%;
+    }
+}
+
+/* iPads, Tablets */
+@media (min-width:601px) and (max-width: 1360px) {
+    .container {
+        width: 50%;
+    }
+}
+
+@media (min-width:481px) and (max-width: 600px) {
+    .container {
+        width: 70%;
+    }
+}
