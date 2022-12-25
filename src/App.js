@@ -22,6 +22,13 @@ function App() {
   const [onBreak, setOnBreak] = useState(false);
   const [label, setLabel] = useState("Session");
 
+  // to play sound 
+  const playSound = () => {
+    const audio = document.getElementById("beep");
+    audio.currentTime = 0;
+    audio.play();
+  }
+
   // to update the minutes and seconds with the sessionTime value
   useEffect(() => {
     if (onSession) {
@@ -41,7 +48,7 @@ function App() {
   // to switch from the session counter to the break counter
   useEffect(() => {
     if (start && onSession && minutes === 0 && seconds === 0) {
-      //playSound();
+      playSound();
       setMinutes(breakTime * 60 / 60);
       setSeconds(breakTime * 60 % 60);
       setOnSession(false);
@@ -53,7 +60,7 @@ function App() {
   // to switch from the break counter to the session counter
   useEffect(() => {
     if (start && onBreak && minutes === 0 && seconds === 0) {
-      //playSound();
+      playSound();
       setMinutes(sessionTime * 60 / 60);
       setSeconds(sessionTime * 60 % 60);
       setOnSession(true);
@@ -139,6 +146,9 @@ function App() {
     setStart(false);
     setOnSession(true);
     setOnBreak(false);
+    const audio = document.getElementById("beep");
+    audio.pause();
+    audio.currentTime = 0;
   }
 
   return (
@@ -153,6 +163,7 @@ function App() {
       <Timer label={label} minutes={minutes} seconds={seconds} play={play} reset={reset} start={start}/>
     </div>
     <Footer />
+    <audio src="https://www.pacdv.com/sounds/interface_sound_effects/sound10.mp3" id="beep"/>
     </div>
   );
 }
