@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import Break from './components/Break';
 import Session from './components/Session';
 import Timer from './components/Timer';
+import Footer from './components/Footer';
 
 import { RxLapTimer } from 'react-icons/rx';
 
@@ -141,6 +142,7 @@ function App() {
   }
 
   return (
+    <div className="App">
     <div className="container">
       <div className="logo">
           <RxLapTimer className="icon" />
@@ -149,6 +151,8 @@ function App() {
       <Break changeTime={changeTime} breakTime={breakTime} />
       <Session changeTime={changeTime} sessionTime={sessionTime} />
       <Timer label={label} minutes={minutes} seconds={seconds} play={play} reset={reset} start={start}/>
+    </div>
+    <Footer />
     </div>
   );
 }
